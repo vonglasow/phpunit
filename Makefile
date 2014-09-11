@@ -5,6 +5,7 @@ GIT := $(shell basename $(shell which git))
 vendor: check composer
 	@echo 'Install dependencies';
 	$(COMPOSER) install
+	@echo 'PATH=$$PATH:$(CURDIR)/bin'
 
 update: check composer
 	@echo 'Update vendor';
